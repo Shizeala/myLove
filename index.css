@@ -2,7 +2,6 @@ body {
     background-color: #f1d5bc;
     background-image: url(images/bg.png);
     background-size: cover;
-    background-repeat: no-repeat;
     overflow: hidden;
     display: flex;
 }
