@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>My Love</title>
+</head>
+
+<body>
+    <header>
+        <div id="envelope" onclick="note()"></div>
+        <div id="note">
+            <p>Hi loveee :>><br>sana ma-appreciate mo po macute-an at ka po sa ginawa q na i2 with maximum efforts and
+                full of lovee >:c<br>I love you so muchhh mmmwaaa :3</p>
+        </div>
+        <div id="usagi"></div>
+    </header>
+    <div id="mainCon">
+        <span></span>
+        <button class="sides" id="left" onclick="expand(1)">
+            <div id="ribbon"></div>
+            <div id="sakura"></div>
+            <div id="leftImg"></div>
+        </button>
+        <button id="middle" onclick="expand(2)">
+            <div id="lock"></div>
+            <div id="midImg"></div>
+        </button>
+        <button class="sides" id="right" onclick="expand(3)">
+            <div id="flower"></div>
+            <div id="key"></div>
+            <div id="rightImg"></div>
+        </button>
+        <span></span>
+    </div>
+    <footer>
+        <div id="leftFooter"></div>
+        <div id="rightFooter"></div>
+    </footer>
+</body>
+
+<script>
+    const leftButton = document.getElementById("left");
+    const midButton = document.getElementById("middle");
+    const rightButton = document.getElementById("right");
+
+    i = true
+    function expand(side) {
+        if (i) {
+            if (side == 1) {
+                leftButton.style.transform = "scale(2.2)";
+                leftButton.style.translate = "0";
+                leftButton.style.zIndex = "10";
+            } else if (side == 2) {
+                midButton.style.transform = "scale(2)";
+                midButton.style.zIndex = "10";
+            } else if (side == 3) {
+                rightButton.style.transform = "scale(2.2)";
+                rightButton.style.translate = "0";
+                rightButton.style.zIndex = "10";
+            }
+            i = false
+        } else {
+            leftButton.style.transform = "rotateZ(-10deg)";
+            leftButton.style.translate = "-175%"
+            setTimeout(function () {
+                leftButton.style.zIndex = "initial";
+            }, 500);
+
+            midButton.style.transform = "scale(1)";
+            setTimeout(function () {
+                midButton.style.zIndex = "initial";
+            }, 500);
+
+            rightButton.style.transform = "rotateZ(10deg)";
+            rightButton.style.translate = "175%";
+            setTimeout(function () {
+                rightButton.style.zIndex = "initial";
+            }, 500);
+            i = true
+        }
+    }
+
+    i2 = true
+    function note() {
+        if (i2) {
+            document.getElementById("note").style.left = "20px";
+            i2 = false;
+        } else {
+            document.getElementById("note").style.left = "-600px";
+            i2 = true;
+        }
+
+    }
+
+</script>
+
+</html>
